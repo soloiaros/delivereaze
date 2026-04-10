@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="text-gray-400 py-12 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src="/union.svg" alt="delivereaze.ai logo" className="w-8 h-8" />

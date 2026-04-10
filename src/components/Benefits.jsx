@@ -12,9 +12,9 @@ export default function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="py-20 bg-alt">
+    <section id="benefits" className="py-16 md:py-24 bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGRhc2hib2FyZCUyMGFuYWx5dGljc3xlbnwxfHx8fDE3NzU4MDU4NzF8MA&ixlib=rb-4.1.0&q=80&w=1080"

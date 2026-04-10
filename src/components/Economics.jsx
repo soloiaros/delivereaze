@@ -23,10 +23,10 @@ export default function Economics() {
   ];
 
   return (
-    <section id="economics" className="py-20 bg-white">
+    <section id="economics" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl mb-4 text-dark">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl lg:text-5xl mb-6 text-dark">
             Proven Economic Impact
           </h2>
           <p className="text-xl text-gray-600">
@@ -34,9 +34,9 @@ export default function Economics() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
           {economicStats.map((stat, index) => (
-            <div key={index} className="p-8 rounded-xl bg-white border-2 border-light">
+            <div key={index} className="p-6 md:p-8 rounded-xl bg-white border-2 border-light">
               <div className="flex items-center gap-3 mb-6">
                 <TrendingUp className="w-8 h-8 text-accent" />
                 <div className="text-5xl text-primary">
