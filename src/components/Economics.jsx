@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { TrendingUp, ArrowRight } from "lucide-react";
 
 export default function Economics() {
@@ -93,10 +94,13 @@ export default function Economics() {
         </div>
 
         <div className="text-center">
-          <button className="px-8 py-4 rounded-lg text-lg inline-flex items-center gap-2 btn-secondary btn-hover-effect">
+          <Link 
+            to="/stats" 
+            className="px-8 py-4 rounded-lg text-lg inline-flex items-center gap-2 btn-secondary btn-hover-effect"
+          >
             View Detailed Statistics
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
