@@ -1,14 +1,52 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ImageWithFallback from "./ImageWithFallback";
+import scooter from "../assets/scooter.svg";
+import motionLines from "../assets/motion-lines.svg";
 
 export default function Hero() {
+  const scooterRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (scooterRef.current) {
+      observer.observe(scooterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <div className="inline-block px-4 py-2 rounded-full text-sm mb-6 badge">
-              AI-Powered Customer Care
+            <div className="relative inline-block mb-6">
+              <div 
+                ref={scooterRef}
+                className={`absolute -top-7 left-4 flex items-end gap-1 ${isVisible ? "scooter-container-entry" : "opacity-0"}`}
+              >
+                <img 
+                  src={motionLines} 
+                  alt="" 
+                  className="w-[38px] h-[19px] motion-lines-animation mb-1"
+                />
+                <img 
+                  src={scooter} 
+                  alt="Delivery Scooter" 
+                  className="w-[29px] h-[29px] scooter-animation"
+                />
+              </div>
+              <div className="inline-block px-4 py-2 rounded-full text-sm badge">
+                AI-Powered Customer Care
+              </div>
             </div>
             <h1 className="text-4xl lg:text-6xl mb-6 text-dark">
               Turn Order Issues Into Customer Loyalty

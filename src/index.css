@@ -46,3 +46,55 @@ body {
   border-radius: 0;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes scooter-bounce {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-3px) scaleY(1.05);
+  }
+}
+
+.scooter-animation {
+  animation: scooter-bounce 0.8s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes scooter-entry {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 1;
+  }
+}
+
+.scooter-container-entry {
+  animation: scooter-entry 1.2s ease-out forwards;
+}
+
+@keyframes lines-motion {
+  0% {
+    transform: scaleX(0.7) translateX(5px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scaleX(1.2) translateX(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(0.7) translateX(5px);
+    opacity: 0.3;
+  }
+}
+
+.motion-lines-animation {
+  animation: lines-motion 0.4s linear infinite;
+  color: #94A3B8; /* Slate-400 */
+}
