@@ -1,0 +1,52 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export default function Navigation() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <nav className="border-b bg-white sticky top-0 z-50 border-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="/Union.svg" alt="delivereaze.ai logo" className="w-10 h-10" />
+            <span className="text-xl text-dark font-medium">delivereaze.ai</span>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+            <a href="#benefits" className="text-gray-600 hover:text-gray-900 transition-colors">Benefits</a>
+            <a href="#statistics" className="text-gray-600 hover:text-gray-900 transition-colors">Statistics</a>
+            <button className="px-6 py-2 rounded-lg transition-all hover:opacity-90 btn-primary">
+              Get Started
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t bg-white border-light">
+          <div className="px-4 py-4 space-y-3">
+            <a href="#features" className="block text-gray-600 hover:text-gray-900">Features</a>
+            <a href="#benefits" className="block text-gray-600 hover:text-gray-900">Benefits</a>
+            <a href="#statistics" className="block text-gray-600 hover:text-gray-900">Statistics</a>
+            <button className="w-full px-6 py-2 rounded-lg btn-primary">
+              Get Started
+            </button>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
