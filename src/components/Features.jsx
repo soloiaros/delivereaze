@@ -1,6 +1,10 @@
+import { useState, useEffect, useRef } from "react";
 import { MessageSquare, Zap, BarChart3, Shield } from "lucide-react";
 
 export default function Features() {
+  const [activeCard, setActiveCard] = useState(null);
+  const cardRefs = useRef([]);
+
   const features = [
     {
       icon: MessageSquare,
@@ -24,6 +28,28 @@ export default function Features() {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveCard(Number(entry.target.getAttribute("data-index")));
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0% -40% 0%",
+        threshold: 0,
+      }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="features" className="py-16 md:py-24 bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,11 +62,18 @@ export default function Features() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 group">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+              ref={(el) => (cardRefs.current[index] = el)}
+              data-index={index}
+              className={`bg-white p-6 md:p-8 rounded-xl shadow-sm transition-all duration-300 ease-out 
+                ${activeCard === index 
+                  ? "max-md:scale-110 max-md:opacity-100 max-md:shadow-2xl max-md:z-10" 
+                  : "max-md:scale-95 max-md:opacity-60"
+                } 
+                md:group-hover:scale-95 md:group-hover:opacity-60 md:hover:!scale-110 md:hover:!opacity-100 md:hover:shadow-2xl md:hover:z-10`}
             >
               <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-6 icon-box-accent">
                 <feature.icon className="w-7 h-7 text-dark" />

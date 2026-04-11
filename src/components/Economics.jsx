@@ -1,6 +1,10 @@
+import { useState, useEffect, useRef } from "react";
 import { TrendingUp, ArrowRight } from "lucide-react";
 
 export default function Economics() {
+  const [activeCard, setActiveCard] = useState(null);
+  const cardRefs = useRef([]);
+
   const economicStats = [
     {
       percentage: "42%",
@@ -22,6 +26,28 @@ export default function Economics() {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveCard(Number(entry.target.getAttribute("data-index")));
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0% -40% 0%",
+        threshold: 0,
+      }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="economics" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,9 +60,19 @@ export default function Economics() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12 group">
           {economicStats.map((stat, index) => (
-            <div key={index} className="p-6 md:p-8 rounded-xl bg-white border-2 border-light">
+            <div 
+              key={index} 
+              ref={(el) => (cardRefs.current[index] = el)}
+              data-index={index}
+              className={`p-6 md:p-8 rounded-xl bg-white border-2 border-light transition-all duration-300 ease-out 
+                ${activeCard === index 
+                  ? "max-md:scale-110 max-md:opacity-100 max-md:shadow-2xl max-md:z-10" 
+                  : "max-md:scale-95 max-md:opacity-60"
+                } 
+                md:group-hover:scale-95 md:group-hover:opacity-60 md:hover:!scale-110 md:hover:!opacity-100 md:hover:shadow-2xl md:hover:z-10`}
+            >
               <div className="flex items-center gap-3 mb-6">
                 <TrendingUp className="w-8 h-8 text-accent" />
                 <div className="text-5xl text-primary">
