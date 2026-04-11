@@ -47,6 +47,14 @@
   color: var(--color-accent);
 }
 
+.text-alt {
+  color: var(--color-bg-alt);
+}
+
+.logo-alt-filter {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(3%) saturate(415%) hue-rotate(20deg) brightness(101%) contrast(85%);
+}
+
 .btn-primary {
   background-color: var(--color-accent);
   color: var(--color-dark);
