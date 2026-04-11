@@ -6,8 +6,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter basename="/delivereaze/">
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )
