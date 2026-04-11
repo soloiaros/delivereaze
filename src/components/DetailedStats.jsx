@@ -126,7 +126,37 @@ export default function DetailedStats() {
         <section className="product-justification mt-20" style={{ color: 'var(--stats-color)' }}>
           <h2 className="text-3xl font-bold mb-8 pb-4 border-b" style={{ borderColor: 'var(--stats-border-color)' }}>Product's Justification</h2>
 
-          <div className="justification-section mb-12">
+          <nav className="table-of-contents mb-12 p-6 border" style={{ borderColor: 'var(--stats-border-color)', backgroundColor: 'rgba(var(--color-primary-rgb), 0.02)' }}>
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--stats-color-muted)' }}>Table of Contents</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#section-1" className="hover:underline flex items-center gap-2">
+                  <span className="text-xs opacity-50">01</span>
+                  <span>Expectation Management & Proactive Problem Reduction</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-2" className="hover:underline flex items-center gap-2">
+                  <span className="text-xs opacity-50">02</span>
+                  <span>Customer Profiling & Hyper-Personalization</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-3" className="hover:underline flex items-center gap-2">
+                  <span className="text-xs opacity-50">03</span>
+                  <span>The "Satisfaction Wallet" & Mastering the Moment of Failure</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-4" className="hover:underline flex items-center gap-2">
+                  <span className="text-xs opacity-50">04</span>
+                  <span>Industry Cautionary Tale: When Tech Ignores Context</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div id="section-1" className="justification-section mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold mb-4">1. Expectation Management & Proactive Problem Reduction</h3>
             <p className="mb-4 leading-relaxed">
               Customer satisfaction fundamentally resides in the alignment of service expectations with actual service delivery. Rather than asserting aggressive delivery time estimates that carry a high probability of failure, our platform leverages dynamic buffering and intelligent order grouping to preemptively mitigate delays.
@@ -138,12 +168,20 @@ export default function DetailedStats() {
               Our strategic solution involves deliberately shaping user expectations. This includes presenting a dynamically calculated delivery buffer—adjusted in real-time according to weather conditions, courier availability, and kitchen capacity—while simultaneously incentivizing customers who opt for flexible delivery windows. By structurally engineering potential problems out of the delivery lifecycle, the platform effectively mitigates the elevated customer churn rates typically associated with delayed and poorly communicated service.
             </p>
             <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
-              <div className="mb-1">https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/</div>
-              <div>https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/</div>
+              <div className="mb-1">
+                <a href="https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/
+                </a>
+              </div>
+              <div>
+                <a href="https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="justification-section mb-12">
+          <div id="section-2" className="justification-section mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold mb-4">2. Customer Profiling & Hyper-Personalization</h3>
             <p className="mb-4 leading-relaxed">
               Relying on generalized averages can be highly misleading. Processing a large family order on a Friday evening identically to a single lunch order on a Tuesday critically ignores situational context. Our SaaS platform transcends basic RFM metrics by utilizing sophisticated behavioral signals.
@@ -155,11 +193,15 @@ export default function DetailedStats() {
               Our solution transforms marketing campaigns from generic discount broadcasts into precise behavioral levers. By correlating multi-order behavioral triggers with enriched customer profile data, the platform empowers restaurants to replicate the nuanced, personalized service of a traditional neighborhood establishment at a digital scale, prioritizing individual customer nuances over mere transactional volume.
             </p>
             <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
-              <div>https://zipdo.co/customer-experience-in-the-food-industry-statistics/</div>
+              <div>
+                <a href="https://zipdo.co/customer-experience-in-the-food-industry-statistics/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  https://zipdo.co/customer-experience-in-the-food-industry-statistics/
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="justification-section mb-12">
+          <div id="section-3" className="justification-section mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold mb-4">3. The "Satisfaction Wallet" & Mastering the Moment of Failure</h3>
             <p className="mb-4 leading-relaxed">
               In the event of a service failure, it is imperative that the customer is not subjected to ambiguity. The product structurally addresses this by allocating a designated "satisfaction budget" directly to frontline staff. This empowers personnel to execute immediate, tangible compensatory gestures—such as complimentary items or real-time financial compensation—thereby circumventing the often counterproductive issuance of future discount vouchers.
@@ -171,12 +213,16 @@ export default function DetailedStats() {
               Our systematic solution replaces the ineffective distribution of generic discounts with the "Satisfaction Wallet," an algorithmic tool that calculates the projected customer satisfaction increase per monetary unit expended. Through the facilitation of immediate compensatory gestures and proactive failure detection, the platform enables the instantaneous recovery of consumer trust while simultaneously safeguarding operational profit margins.
             </p>
             <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
-              <div>https://zipdo.co/customer-experience-in-the-food-industry-statistics/</div>
+              <div>
+                <a href="https://zipdo.co/customer-experience-in-the-food-industry-statistics/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  https://zipdo.co/customer-experience-in-the-food-industry-statistics/
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="justification-section mb-12">
-            <h3 className="text-2xl font-semibold mb-4">4. Industry Cautionary Tale: When Tech Ignores Context</h3>
+          <div id="section-4" className="justification-section mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold mb-4">4. Industry Cautionary Tale</h3>
             <p className="mb-4 leading-relaxed">
               The integration of digital ordering technology absent store-level contextual awareness and behavioral profiling often results in systemic operational failure due to algorithmic rigidity.
             </p>
@@ -190,7 +236,11 @@ export default function DetailedStats() {
               Our platform achieves superior outcomes by leveraging Store-Level and Context-Specific Intelligence. The system autonomously calibrates delivery and preparation promises in response to extreme operational events, meteorological conditions, courier availability, and localized traffic patterns. Rather than merely processing transactions, the platform dynamically optimizes the underlying operational reality, guaranteeing that the delivered service precisely aligns with the established customer expectations.
             </p>
             <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
-              <div>https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/</div>
+              <div>
+                <a href="https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/
+                </a>
+              </div>
             </div>
           </div>
         </section>
