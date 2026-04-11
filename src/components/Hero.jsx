@@ -18,11 +18,11 @@ export default function Hero() {
               resolving issues before frustration sets in. Built specifically for fast food chains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 transition-all hover:opacity-90 btn-primary">
+              <button className="px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 btn-primary btn-hover-effect">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="px-8 py-4 rounded-lg border-2 text-lg transition-all hover:opacity-80 btn-outline">
+              <button className="px-8 py-4 rounded-lg border-2 text-lg flex items-center justify-center gap-2 btn-outline btn-hover-effect">
                 Watch Demo
               </button>
             </div>

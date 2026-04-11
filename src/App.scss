@@ -50,16 +50,22 @@
 .btn-primary {
   background-color: var(--color-accent);
   color: var(--color-dark);
+  --hover-bg: var(--color-primary);
+  --hover-text: white;
 }
 
 .btn-secondary {
   background-color: var(--color-primary);
   color: white;
+  --hover-bg: var(--color-accent);
+  --hover-text: var(--color-dark);
 }
 
 .btn-outline {
   border-color: var(--color-primary);
   color: var(--color-primary);
+  --hover-bg: var(--color-primary);
+  --hover-text: white;
 }
 
 .badge {

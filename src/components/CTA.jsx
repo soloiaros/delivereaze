@@ -11,10 +11,13 @@ export default function CTA() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 rounded-lg text-lg hover:opacity-90 transition-opacity btn-primary">
+          <button className="px-8 py-4 rounded-lg border-2 border-transparent hover:border-white text-lg btn-primary btn-hover-effect">
             Start Free Trial
           </button>
-          <button className="px-8 py-4 rounded-lg border-2 border-white text-white text-lg hover:bg-white/10 transition-colors">
+          <button 
+            className="px-8 py-4 rounded-lg border-2 border-white text-white text-lg btn-hover-effect"
+            style={{ '--hover-bg': 'white', '--hover-text': 'var(--color-primary)' }}
+          >
             Schedule Demo
           </button>
         </div>
