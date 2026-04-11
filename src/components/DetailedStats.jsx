@@ -66,7 +66,7 @@ const IsometricCube = () => (
   </svg>
 );
 
-const StatCard = ({ graphic: Graphic, title, value, index }) => (
+const StatCard = ({ graphic: Graphic, title, description, source, index }) => (
   <div className="stat-card">
     <div className="card-border border-top" />
     <div className="card-border border-right" />
@@ -82,21 +82,26 @@ const StatCard = ({ graphic: Graphic, title, value, index }) => (
         <Graphic />
       </div>
       <h3 className="stat-title">{title}</h3>
-      <p className="stat-value">{value}</p>
+      <p className="stat-description">{description}</p>
+      {source && (
+        <a href={source} target="_blank" rel="noopener noreferrer" className="stat-source">
+          source
+        </a>
+      )}
     </div>
   </div>
 );
 
 export default function DetailedStats() {
   const stats = [
-    { graphic: IsometricBarChart, title: "Monthly Recurring Revenue", value: "$45,230" },
-    { graphic: IsometricToggle, title: "Active Automations", value: "1,204" },
-    { graphic: IsometricCylinder, title: "Data Nodes", value: "8,592" },
-    { graphic: IsometricDial, title: "Customer Retention", value: "94.2%" },
-    { graphic: IsometricCube, title: "API Throughput", value: "420 req/s" },
-    { graphic: IsometricToggle, title: "System Uptime", value: "99.99%" },
-    { graphic: IsometricBarChart, title: "Conversion Rate", value: "12.4%" },
-    { graphic: IsometricDial, title: "Avg Response Time", value: "1.2s" },
+    { graphic: IsometricBarChart, title: "Experience Issues", description: <>Over <strong className="stat-percentage">70%</strong> of food delivery consumers experience issues, with late delivery being the primary complaint.</>, source: "https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/" },
+    { graphic: IsometricToggle, title: "Wait Time Frustration", description: <>A staggering <strong className="stat-percentage">75%</strong> of consumers rank long waiting times as a major customer service frustration.</>, source: "https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/" },
+    { graphic: IsometricCylinder, title: "Wait Longer Proactively", description: <><strong className="stat-percentage">58%</strong> of consumers are willing to wait 10+ minutes longer if the wait is explained and managed proactively.</>, source: "https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/" },
+    { graphic: IsometricDial, title: "Demand Personalization", description: <><strong className="stat-percentage">80%</strong> of consumers are more likely to do business with a company offering personalized experiences.</>, source: "https://zipdo.co/customer-experience-in-the-food-industry-statistics/" },
+    { graphic: IsometricCube, title: "Contextual Loyalty", description: <><strong className="stat-percentage">55%</strong> of consumers are more likely to return to a restaurant that remembers their exact order preferences.</>, source: "https://zipdo.co/customer-experience-in-the-food-industry-statistics/" },
+    { graphic: IsometricToggle, title: "Churn (No Personalization)", description: <><strong className="stat-percentage">37%</strong> of customers have switched restaurants due to a lack of personalization in their experience.</>, source: "https://zipdo.co/customer-experience-in-the-food-industry-statistics/" },
+    { graphic: IsometricBarChart, title: "Expect Quick Resolution", description: <>When a delivery goes wrong, <strong className="stat-percentage">93%</strong> of consumers expect the issue to be resolved in under 10 minutes.</>, source: "https://zipdo.co/customer-experience-in-the-food-industry-statistics/" },
+    { graphic: IsometricDial, title: "Value Human Recovery", description: <><strong className="stat-percentage">92%</strong> of customers are likely to buy from a brand again if they get a quick, empathetic resolution to a problem.</>, source: "https://zipdo.co/customer-experience-in-the-food-industry-statistics/" },
   ];
 
   return (
