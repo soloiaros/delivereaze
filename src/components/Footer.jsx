@@ -1,3 +1,5 @@
+import logo from "../assets/Union.svg";
+
 export default function Footer() {
   return (
     <footer className="text-alt py-12 bg-dark">
@@ -5,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/Union.svg" alt="delivereaze.ai logo" className="w-8 h-8 logo-alt-filter" />
+              <img src={logo} alt="delivereaze.ai logo" className="w-8 h-8 logo-alt-filter" />
               <span className="text-alt font-medium">delivereaze.ai</span>
             </div>
             <p className="text-sm opacity-80">
