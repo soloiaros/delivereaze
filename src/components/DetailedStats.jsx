@@ -122,6 +122,78 @@ export default function DetailedStats() {
             <StatCard key={index} index={index} {...stat} />
           ))}
         </div>
+
+        <section className="product-justification mt-20" style={{ color: 'var(--stats-color)' }}>
+          <h2 className="text-3xl font-bold mb-8 pb-4 border-b" style={{ borderColor: 'var(--stats-border-color)' }}>Product's Justification</h2>
+
+          <div className="justification-section mb-12">
+            <h3 className="text-2xl font-semibold mb-4">1. Expectation Management & Proactive Problem Reduction</h3>
+            <p className="mb-4 leading-relaxed">
+              Customer satisfaction fundamentally resides in the alignment of service expectations with actual service delivery. Rather than asserting aggressive delivery time estimates that carry a high probability of failure, our platform leverages dynamic buffering and intelligent order grouping to preemptively mitigate delays.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              The underlying data highlights significant operational challenges: Over 70% of food delivery consumers report experiencing service issues, with late deliveries constituting the primary complaint at 50%, closely followed by the delivery of cold or non-fresh food at 36%. Furthermore, 75% of consumers identify extended wait times as a critical customer service frustration. However, proactive expectation management significantly alters this dynamic: 58% of consumers express a willingness to endure wait times extended by 10 minutes or more, provided the delay is transparently communicated and proactively managed.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Our strategic solution involves deliberately shaping user expectations. This includes presenting a dynamically calculated delivery buffer—adjusted in real-time according to weather conditions, courier availability, and kitchen capacity—while simultaneously incentivizing customers who opt for flexible delivery windows. By structurally engineering potential problems out of the delivery lifecycle, the platform effectively mitigates the elevated customer churn rates typically associated with delayed and poorly communicated service.
+            </p>
+            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+              <div className="mb-1">https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/</div>
+              <div>https://retail-insider.com/retail-insider/2025/06/new-survey-reveals-75-of-consumers-frustrated-by-long-customer-service-wait-times-and-poor-resolutions/</div>
+            </div>
+          </div>
+
+          <div className="justification-section mb-12">
+            <h3 className="text-2xl font-semibold mb-4">2. Customer Profiling & Hyper-Personalization</h3>
+            <p className="mb-4 leading-relaxed">
+              Relying on generalized averages can be highly misleading. Processing a large family order on a Friday evening identically to a single lunch order on a Tuesday critically ignores situational context. Our SaaS platform transcends basic RFM metrics by utilizing sophisticated behavioral signals.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Market data underscores the critical demand for personalized services: 80% of consumers demonstrate a higher propensity to engage with businesses offering personalized experiences, while 72% indicate that tailored recommendations enhance their sense of value as customers. Additionally, contextual loyalty is a significant driver, as 55% of consumers are more likely to return to establishments that accurately recall their specific order preferences, such as delivery time flexibility or ingredient modifications. Conversely, the failure to personalize directly contributes to customer attrition, with 37% of consumers having abandoned a restaurant due to inadequate personalization.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Our solution transforms marketing campaigns from generic discount broadcasts into precise behavioral levers. By correlating multi-order behavioral triggers with enriched customer profile data, the platform empowers restaurants to replicate the nuanced, personalized service of a traditional neighborhood establishment at a digital scale, prioritizing individual customer nuances over mere transactional volume.
+            </p>
+            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+              <div>https://zipdo.co/customer-experience-in-the-food-industry-statistics/</div>
+            </div>
+          </div>
+
+          <div className="justification-section mb-12">
+            <h3 className="text-2xl font-semibold mb-4">3. The "Satisfaction Wallet" & Mastering the Moment of Failure</h3>
+            <p className="mb-4 leading-relaxed">
+              In the event of a service failure, it is imperative that the customer is not subjected to ambiguity. The product structurally addresses this by allocating a designated "satisfaction budget" directly to frontline staff. This empowers personnel to execute immediate, tangible compensatory gestures—such as complimentary items or real-time financial compensation—thereby circumventing the often counterproductive issuance of future discount vouchers.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Industry statistics highlight the strict parameters of customer expectations regarding issue resolution: 93% of consumers expect a service failure to be resolved in under 10 minutes, with 79% demanding direct and transparent communication throughout the resolution process. Furthermore, consumers largely reject purely transactional apologies, as 71% assert that businesses should provide direct financial reimbursement for substandard interactions. Conversely, the implementation of human-centric recovery strategies yields substantial dividends, with 92% of customers expressing a likelihood to repurchase from a brand following a rapid and empathetic resolution.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Our systematic solution replaces the ineffective distribution of generic discounts with the "Satisfaction Wallet," an algorithmic tool that calculates the projected customer satisfaction increase per monetary unit expended. Through the facilitation of immediate compensatory gestures and proactive failure detection, the platform enables the instantaneous recovery of consumer trust while simultaneously safeguarding operational profit margins.
+            </p>
+            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+              <div>https://zipdo.co/customer-experience-in-the-food-industry-statistics/</div>
+            </div>
+          </div>
+
+          <div className="justification-section mb-12">
+            <h3 className="text-2xl font-semibold mb-4">4. Industry Cautionary Tale: When Tech Ignores Context</h3>
+            <p className="mb-4 leading-relaxed">
+              The integration of digital ordering technology absent store-level contextual awareness and behavioral profiling often results in systemic operational failure due to algorithmic rigidity.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              A prominent example is the Starbucks Mobile Order congestion crisis. While the enterprise aggressively scaled mobile ordering capabilities, it failed to integrate dynamic capacity constraints and customer proximity into its fulfillment timeline promises. Operations analyses concluded that the Starbucks mobile ordering infrastructure generated a critical timing mismatch. The application processed all orders as uniform queue items, neglecting variables such as real-time store capacity, concurrent walk-in traffic volume, and the actual physical arrival time of the ordering customer.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              The outcome was a significant degradation in product quality—with finished items deteriorating on counters—and the generation of severe in-store operational bottlenecks. The fundamental lesson is that static store-level averages are inherently misleading. Algorithms that fail to account for operational micro-patterns, such as specific staffing levels during peak demand periods under adverse weather conditions, systematically degrade the overall customer experience.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Our platform achieves superior outcomes by leveraging Store-Level and Context-Specific Intelligence. The system autonomously calibrates delivery and preparation promises in response to extreme operational events, meteorological conditions, courier availability, and localized traffic patterns. Rather than merely processing transactions, the platform dynamically optimizes the underlying operational reality, guaranteeing that the delivered service precisely aligns with the established customer expectations.
+            </p>
+            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+              <div>https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/</div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
