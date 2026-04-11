@@ -1,9 +1,9 @@
 :root {
-  --stats-bg: #ffffff;
-  --stats-color: #000000;
-  --stats-color-muted: #888888;
-  --stats-border-color: #000000;
-  --stats-hover-bg: #fafafa;
+  --stats-bg: #fcfcfc;
+  --stats-color: var(--color-primary);
+  --stats-color-muted: rgba(36, 78, 93, 0.6);
+  --stats-border-color: var(--color-primary);
+  --stats-hover-bg: #f5f5f5;
   --stats-grid-gap: 1px;
   --stats-card-padding: 4rem 2rem;
   --stats-graphic-size: 60px;
@@ -61,7 +61,7 @@
 
   .stat-card {
     position: relative;
-    background-color: var(--stats-bg);
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,10 +102,16 @@
       position: absolute;
       top: 12px;
       left: 12px;
-      font-size: 11px;
+      font-size: 10px;
       font-family: 'Roboto Mono', monospace;
       color: var(--stats-color-muted);
       line-height: 1;
+      background-color: #ffffff;
+      padding: 4px 6px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      z-index: 10;
     }
 
     .card-inner {
