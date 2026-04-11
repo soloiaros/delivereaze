@@ -2,28 +2,28 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { TrendingUp, ArrowRight } from "lucide-react";
 
-export default function Economics() {
+export default function Statistics() {
   const [activeCard, setActiveCard] = useState(null);
   const cardRefs = useRef([]);
 
-  const economicStats = [
+  const statistics = [
     {
-      percentage: "42%",
-      metric: "Increase in Customer Lifetime Value",
-      description: "Multi-chain study across 3,200+ locations showed proactive issue resolution increased repeat purchase rates by 42% over 12 months.",
-      source: "QSR Analytics Institute, 2025",
+      percentage: "58%",
+      metric: "Willingness to Wait",
+      description: "58% of consumers are willing to wait 10+ minutes longer if the wait is explained and managed proactively.",
+      source: "Retail Insider, 2025",
     },
     {
-      percentage: "3.8x",
-      metric: "ROI on Customer Service Technology",
-      description: "Restaurants implementing AI-driven proactive outreach saw an average return of $3.80 for every dollar invested within the first year.",
-      source: "Restaurant Economics Journal, 2025",
+      percentage: "93%",
+      metric: "Quick Resolution Expectation",
+      description: "When a delivery goes wrong, 93% of consumers expect the issue to be resolved in under 10 minutes.",
+      source: "ZipDo Customer Experience Statistics, 2024",
     },
     {
-      percentage: "68%",
-      metric: "Reduction in Churn Rate",
-      description: "Chains using proactive communication reduced customer churn by 68%, with particularly strong effects among high-frequency customers.",
-      source: "Fast Food Industry Research Coalition, 2024",
+      percentage: "92%",
+      metric: "Brand Loyalty through Recovery",
+      description: "92% of customers are likely to buy from a brand again if they get a quick, empathetic resolution to a problem.",
+      source: "ZipDo Customer Experience Statistics, 2024",
     },
   ];
 
@@ -50,19 +50,19 @@ export default function Economics() {
   }, []);
 
   return (
-    <section id="economics" className="py-16 md:py-24 bg-white">
+    <section id="statistics" className="py-16 md:py-24 bg-white text-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl lg:text-5xl mb-6 text-dark">
-            Proven Economic Impact
+            Proven Statistics
           </h2>
           <p className="text-xl text-gray-600">
-            Research-backed statistics from multi-chain restaurant studies
+            Research-backed data from global restaurant and delivery studies
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12 group">
-          {economicStats.map((stat, index) => (
+          {statistics.map((stat, index) => (
             <div 
               key={index} 
               ref={(el) => (cardRefs.current[index] = el)}
@@ -76,11 +76,11 @@ export default function Economics() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <TrendingUp className="w-8 h-8 text-accent" />
-                <div className="text-5xl text-primary">
+                <div className="text-5xl text-primary font-bold">
                   {stat.percentage}
                 </div>
               </div>
-              <h3 className="text-2xl mb-4 text-dark">
+              <h3 className="text-2xl mb-4 text-dark font-semibold">
                 {stat.metric}
               </h3>
               <p className="text-gray-700 mb-4 leading-relaxed">

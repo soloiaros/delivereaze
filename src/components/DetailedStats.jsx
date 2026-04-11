@@ -66,31 +66,33 @@ const IsometricCube = () => (
   </svg>
 );
 
-const StatCard = ({ graphic: Graphic, title, description, source, index }) => (
-  <div className="stat-card">
-    <div className="card-border border-top" />
-    <div className="card-border border-right" />
-    <div className="card-border border-bottom" />
-    <div className="card-border border-left" />
-    <div className="corner-dot top-left" />
-    <div className="corner-dot top-right" />
-    <div className="corner-dot bottom-left" />
-    <div className="corner-dot bottom-right" />
-    <span className="card-index">{String(index + 1).padStart(2, '0')}</span>
-    <div className="card-inner">
-      <div className="graphic-container">
-        <Graphic />
+const StatCard = ({ graphic: GraphicComponent, title, description, source, index }) => {
+  return (
+    <div className="stat-card">
+      <div className="card-border border-top" />
+      <div className="card-border border-right" />
+      <div className="card-border border-bottom" />
+      <div className="card-border border-left" />
+      <div className="corner-dot top-left" />
+      <div className="corner-dot top-right" />
+      <div className="corner-dot bottom-left" />
+      <div className="corner-dot bottom-right" />
+      <span className="card-index">{String(index + 1).padStart(2, '0')}</span>
+      <div className="card-inner">
+        <div className="graphic-container">
+          <GraphicComponent />
+        </div>
+        <h3 className="stat-title">{title}</h3>
+        <p className="stat-description">{description}</p>
+        {source && (
+          <a href={source} target="_blank" rel="noopener noreferrer" className="stat-source">
+            source
+          </a>
+        )}
       </div>
-      <h3 className="stat-title">{title}</h3>
-      <p className="stat-description">{description}</p>
-      {source && (
-        <a href={source} target="_blank" rel="noopener noreferrer" className="stat-source">
-          source
-        </a>
-      )}
     </div>
-  </div>
-);
+  );
+};
 
 export default function DetailedStats() {
   const stats = [
@@ -167,7 +169,7 @@ export default function DetailedStats() {
             <p className="mb-4 leading-relaxed">
               Our strategic solution involves deliberately shaping user expectations. This includes presenting a dynamically calculated delivery buffer—adjusted in real-time according to weather conditions, courier availability, and kitchen capacity—while simultaneously incentivizing customers who opt for flexible delivery windows. By structurally engineering potential problems out of the delivery lifecycle, the platform effectively mitigates the elevated customer churn rates typically associated with delayed and poorly communicated service.
             </p>
-            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+            <div className="sources text-sm mt-4 break-all" style={{ color: 'var(--stats-color-muted)' }}>
               <div className="mb-1">
                 <a href="https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   https://www.restaurantdive.com/news/research-shows-delivery-pain-points-from-unidentifiable-calls-to-incorrect/584787/
@@ -192,7 +194,7 @@ export default function DetailedStats() {
             <p className="mb-4 leading-relaxed">
               Our solution transforms marketing campaigns from generic discount broadcasts into precise behavioral levers. By correlating multi-order behavioral triggers with enriched customer profile data, the platform empowers restaurants to replicate the nuanced, personalized service of a traditional neighborhood establishment at a digital scale, prioritizing individual customer nuances over mere transactional volume.
             </p>
-            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+            <div className="sources text-sm mt-4 break-all" style={{ color: 'var(--stats-color-muted)' }}>
               <div>
                 <a href="https://zipdo.co/customer-experience-in-the-food-industry-statistics/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   https://zipdo.co/customer-experience-in-the-food-industry-statistics/
@@ -212,7 +214,7 @@ export default function DetailedStats() {
             <p className="mb-4 leading-relaxed">
               Our systematic solution replaces the ineffective distribution of generic discounts with the "Satisfaction Wallet," an algorithmic tool that calculates the projected customer satisfaction increase per monetary unit expended. Through the facilitation of immediate compensatory gestures and proactive failure detection, the platform enables the instantaneous recovery of consumer trust while simultaneously safeguarding operational profit margins.
             </p>
-            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+            <div className="sources text-sm mt-4 break-all" style={{ color: 'var(--stats-color-muted)' }}>
               <div>
                 <a href="https://zipdo.co/customer-experience-in-the-food-industry-statistics/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   https://zipdo.co/customer-experience-in-the-food-industry-statistics/
@@ -235,7 +237,7 @@ export default function DetailedStats() {
             <p className="mb-4 leading-relaxed">
               Our platform achieves superior outcomes by leveraging Store-Level and Context-Specific Intelligence. The system autonomously calibrates delivery and preparation promises in response to extreme operational events, meteorological conditions, courier availability, and localized traffic patterns. Rather than merely processing transactions, the platform dynamically optimizes the underlying operational reality, guaranteeing that the delivered service precisely aligns with the established customer expectations.
             </p>
-            <div className="sources text-sm mt-4" style={{ color: 'var(--stats-color-muted)' }}>
+            <div className="sources text-sm mt-4 break-all" style={{ color: 'var(--stats-color-muted)' }}>
               <div>
                 <a href="https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   https://www.leanblog.org/2026/03/starbucks-mobile-order-timing-problem-chick-fil-a-solved/

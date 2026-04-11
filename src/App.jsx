@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import Benefits from "./components/Benefits";
-import Economics from "./components/Economics";
+import Statistics from "./components/Statistics";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import DetailedStats from "./components/DetailedStats";
@@ -17,7 +17,7 @@ function Home() {
       <Features />
       <HowItWorks />
       <Benefits />
-      <Economics />
+      <Statistics />
       <CTA />
     </>
   );
