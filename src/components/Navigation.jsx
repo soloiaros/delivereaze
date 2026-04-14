@@ -23,9 +23,7 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#benefits" className="text-gray-600 hover:text-gray-900 transition-colors">Benefits</a>
-            <a href="#statistics" className="text-gray-600 hover:text-gray-900 transition-colors">Statistics</a>
+            <Link to="/stats" className="text-gray-600 hover:text-gray-900 transition-colors">Research</Link>
             <Link to="/demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</Link>
             <div className="relative">
               <button 
@@ -57,9 +55,8 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white border-light">
           <div className="px-4 py-4 space-y-3">
-            <a href="#features" className="block text-gray-600 hover:text-gray-900">Features</a>
-            <a href="#benefits" className="block text-gray-600 hover:text-gray-900">Benefits</a>
-            <a href="#statistics" className="block text-gray-600 hover:text-gray-900">Statistics</a>
+            <Link to="/stats" className="block text-gray-600 hover:text-gray-900">Research</Link>
+            <Link to="/demo" className="block text-gray-600 hover:text-gray-900">Demo</Link>
             <div className="relative">
               <button 
                 ref={mobileButtonRef}
