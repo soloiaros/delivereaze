@@ -17,6 +17,7 @@ import "./Demo.scss";
 const logs = [
   {
     id: 1,
+    orderId: "#4829",
     detection: "12 Min Delay Detected",
     resolution: "Automated SMS Sent + $5 Next-Visit Promo",
     status: "Success",
@@ -24,6 +25,7 @@ const logs = [
   },
   {
     id: 2,
+    orderId: "#4825",
     detection: "Driver Not Assigned (5m)",
     resolution: "Order escalated to priority queue",
     status: "Processing",
@@ -31,6 +33,7 @@ const logs = [
   },
   {
     id: 3,
+    orderId: "#4821",
     detection: "Item Out of Stock",
     resolution: "Customer called via AI + Alternative suggested",
     status: "Warning",
@@ -38,6 +41,7 @@ const logs = [
   },
   {
     id: 4,
+    orderId: "#4818",
     detection: "Payment Failure",
     resolution: "Retried + Customer notified via Push",
     status: "Error",
@@ -45,6 +49,7 @@ const logs = [
   },
   {
     id: 5,
+    orderId: "#4812",
     detection: "8 Min Delay Detected",
     resolution: "Automated SMS Sent + Loyalty Points Added",
     status: "Success",
@@ -85,9 +90,12 @@ export default function Demo() {
         {/* Global Header */}
         <header className="demo-header">
           <div className="header-left">
-            <div className="kitchen-health">
-              <span className="dot green"></span>
-              Kitchen Health: Normal
+            <div className="kitchen-health-container">
+              <div className="kitchen-health">
+                <span className="dot green"></span>
+                Kitchen Health: Normal
+              </div>
+              <span className="kds-subtext">based on your KDS</span>
             </div>
           </div>
           <div className="header-right">
@@ -106,7 +114,7 @@ export default function Demo() {
               <h1>Handled Edge Cases</h1>
               <div className="metrics">
                 <span className="completed">128</span>
-                <span className="total">/ 132 automated today</span>
+                <span className="total">automated today</span>
               </div>
             </div>
           </div>
@@ -133,6 +141,7 @@ export default function Demo() {
 
           <div className="data-section">
             <div className="list-header">
+              <div className="col col-order">ORDER ID</div>
               <div className="col col-detection">
                 DETECTION <ChevronDown className="w-3 h-3 inline ml-1 opacity-50" />
               </div>
@@ -147,6 +156,9 @@ export default function Demo() {
             <div className="list-body">
               {logs.map((log) => (
                 <div key={log.id} className="list-row">
+                  <div className="col col-order secondary-text">
+                    {log.orderId}
+                  </div>
                   <div className="col col-detection primary-text">
                     {log.detection}
                   </div>
