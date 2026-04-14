@@ -285,9 +285,9 @@
       }
 
       .col-order { width: 100px; }
+      .col-type { width: 120px; }
       .col-detection { flex: 1.5; }
       .col-resolution { flex: 2; }
-      .col-status { width: 140px; }
       .col-time { width: 120px; text-align: right; }
       .col-action { width: 40px; display: flex; justify-content: flex-end; }
     }
@@ -298,27 +298,27 @@
     align-items: center;
     padding: 4px 10px;
     border-radius: 9999px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
 
-    &.badge-success {
+    &.badge-vip {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    &.badge-first-timer {
       background: #ecfdf5;
       color: #059669;
     }
 
-    &.badge-warning {
+    &.badge-low-value {
       background: #fffbeb;
       color: #d97706;
     }
 
-    &.badge-error {
-      background: #fef2f2;
-      color: #dc2626;
-    }
-
-    &.badge-processing {
-      background: #eff6ff;
-      color: #2563eb;
+    &.badge-other {
+      background: #f3f4f6;
+      color: #4b5563;
     }
   }
 }

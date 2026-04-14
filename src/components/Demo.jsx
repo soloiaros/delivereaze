@@ -18,64 +18,56 @@ const logs = [
   {
     id: 1,
     orderId: "#4829",
+    type: "VIP",
     detection: "12 Min Delay Detected",
     resolution: "Automated SMS Sent + $5 Next-Visit Promo",
-    status: "Success",
     time: "2 mins ago"
   },
   {
     id: 2,
     orderId: "#4825",
+    type: "First-Timer",
     detection: "Driver Not Assigned (5m)",
     resolution: "Order escalated to priority queue",
-    status: "Processing",
     time: "5 mins ago"
   },
   {
     id: 3,
     orderId: "#4821",
+    type: "Low-Value",
     detection: "Item Out of Stock",
     resolution: "Customer called via AI + Alternative suggested",
-    status: "Warning",
     time: "15 mins ago"
   },
   {
     id: 4,
     orderId: "#4818",
+    type: "Other",
     detection: "Payment Failure",
     resolution: "Retried + Customer notified via Push",
-    status: "Error",
     time: "32 mins ago"
   },
   {
     id: 5,
     orderId: "#4812",
+    type: "VIP",
     detection: "8 Min Delay Detected",
     resolution: "Automated SMS Sent + Loyalty Points Added",
-    status: "Success",
     time: "45 mins ago"
   }
 ];
 
-const StatusBadge = ({ status }) => {
+const TypeBadge = ({ type }) => {
   const styles = {
-    Success: "badge-success",
-    Warning: "badge-warning",
-    Error: "badge-error",
-    Processing: "badge-processing"
-  };
-
-  const icons = {
-    Success: <CheckCircle2 className="w-3 h-3 mr-1" />,
-    Warning: <AlertCircle className="w-3 h-3 mr-1" />,
-    Error: <AlertCircle className="w-3 h-3 mr-1" />,
-    Processing: <Clock className="w-3 h-3 mr-1" />
+    "VIP": "badge-vip",
+    "First-Timer": "badge-first-timer",
+    "Low-Value": "badge-low-value",
+    "Other": "badge-other"
   };
 
   return (
-    <span className={`status-pill ${styles[status]}`}>
-      {icons[status]}
-      {status}
+    <span className={`status-pill ${styles[type]}`}>
+      {type}
     </span>
   );
 };
@@ -133,7 +125,7 @@ export default function Demo() {
                 <input type="text" placeholder="Search logs..." />
               </div>
               <button className="filter-dropdown">
-                Filter by Status
+                Filter by Type
                 <ChevronDown className="w-4 h-4" />
               </button>
             </div>
@@ -142,13 +134,13 @@ export default function Demo() {
           <div className="data-section">
             <div className="list-header">
               <div className="col col-order">ORDER ID</div>
+              <div className="col col-type">TYPE</div>
               <div className="col col-detection">
                 DETECTION <ChevronDown className="w-3 h-3 inline ml-1 opacity-50" />
               </div>
               <div className="col col-resolution">
                 RESOLUTION <ChevronDown className="w-3 h-3 inline ml-1 opacity-50" />
               </div>
-              <div className="col col-status">STATUS</div>
               <div className="col col-time">TIME</div>
               <div className="col col-action"></div>
             </div>
@@ -159,14 +151,14 @@ export default function Demo() {
                   <div className="col col-order secondary-text">
                     {log.orderId}
                   </div>
+                  <div className="col col-type">
+                    <TypeBadge type={log.type} />
+                  </div>
                   <div className="col col-detection primary-text">
                     {log.detection}
                   </div>
                   <div className="col col-resolution secondary-text">
                     {log.resolution}
-                  </div>
-                  <div className="col col-status">
-                    <StatusBadge status="Success" />
                   </div>
                   <div className="col col-time secondary-text">
                     {log.time}
