@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import ImageWithFallback from "./ImageWithFallback";
 import scooter from "../assets/scooter.svg";
 import motionLines from "../assets/motion-lines.svg";
@@ -60,9 +61,9 @@ export default function Hero() {
                 Start Free Trial
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="px-8 py-4 rounded-lg border-2 text-lg flex items-center justify-center gap-2 btn-outline btn-hover-effect">
+              <Link to="/demo" className="px-8 py-4 rounded-lg border-2 text-lg flex items-center justify-center gap-2 btn-outline btn-hover-effect">
                 Watch Demo
-              </button>
+              </Link>
             </div>
           </div>
           <div className="relative">

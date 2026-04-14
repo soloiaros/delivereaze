@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CTA() {
   return (
     <section className="py-16 md:py-24 bg-primary">
@@ -14,12 +16,13 @@ export default function CTA() {
           <button className="px-8 py-4 rounded-lg border-2 border-transparent hover:border-white text-lg btn-primary btn-hover-effect">
             Start Free Trial
           </button>
-          <button 
-            className="px-8 py-4 rounded-lg border-2 border-white text-white text-lg btn-hover-effect"
+          <Link 
+            to="/demo"
+            className="px-8 py-4 rounded-lg border-2 border-white text-white text-lg btn-hover-effect flex items-center justify-center"
             style={{ '--hover-bg': 'white', '--hover-text': 'var(--color-primary)' }}
           >
-            Schedule Demo
-          </button>
+            Watch Demo
+          </Link>
         </div>
       </div>
     </section>

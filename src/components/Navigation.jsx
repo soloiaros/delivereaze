@@ -20,6 +20,7 @@ export default function Navigation() {
             <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
             <a href="#benefits" className="text-gray-600 hover:text-gray-900 transition-colors">Benefits</a>
             <a href="#statistics" className="text-gray-600 hover:text-gray-900 transition-colors">Statistics</a>
+            <Link to="/demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</Link>
             <button className="px-6 py-2 rounded-lg transition-all hover:opacity-90 btn-primary">
               Get Started
             </button>
