@@ -10,9 +10,7 @@ import {
   AlertCircle, 
   Clock, 
   Zap,
-  LayoutGrid,
-  History,
-  Users
+  ArrowLeft
 } from "lucide-react";
 import "./Demo.scss";
 
@@ -80,14 +78,17 @@ const StatusBadge = ({ status }) => {
 export default function Demo() {
   return (
     <div className="demo-page">
+      <Link to="/" className="back-arrow">
+        <ArrowLeft className="w-6 h-6" />
+      </Link>
       <div className="main-app-container">
         {/* Global Header */}
         <header className="demo-header">
           <div className="header-left">
-            <Link to="/" className="demo-logo">
+            <div className="demo-logo">
               <Zap className="w-6 h-6 text-blue-500 fill-current" />
               <span>AImpact</span>
-            </Link>
+            </div>
             <nav className="demo-nav">
               <button className="nav-item active">Dashboard</button>
               <button className="nav-item">Analytics</button>

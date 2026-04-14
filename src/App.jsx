@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -25,9 +25,12 @@ function Home() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const isDemoPage = location.pathname === "/demo";
+
   return (
     <div className="min-h-screen page-container">
-      <Navigation />
+      {!isDemoPage && <Navigation />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,7 +38,7 @@ export default function App() {
           <Route path="/demo" element={<Demo />} />
         </Routes>
       </main>
-      <Footer />
+      {!isDemoPage && <Footer />}
     </div>
   );
 }
