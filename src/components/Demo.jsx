@@ -40,6 +40,67 @@ const getTimeAgo = (timestamp) => {
   return `${hours}h ago`;
 };
 
+const LogItem = ({ log, currentTime }) => {
+  const [activeExtreme, setActiveExtreme] = useState(log.extreme);
+  const [countdown, setCountdown] = useState(10);
+
+  useEffect(() => {
+    if (!activeExtreme) return;
+
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          setActiveExtreme(false);
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [activeExtreme]);
+
+  const handleRowClick = () => {
+    if (activeExtreme) {
+      setActiveExtreme(false);
+    }
+  };
+
+  return (
+    <div 
+      className={`list-row ${activeExtreme ? 'extreme-row' : ''}`}
+      onClick={handleRowClick}
+    >
+      <div className="col col-order secondary-text">
+        {log.orderId}
+      </div>
+      <div className="col col-type">
+        <TypeBadge type={log.type} />
+      </div>
+      <div className="col col-detection primary-text">
+        {log.detection}
+      </div>
+      <div className="col col-resolution secondary-text">
+        {log.resolution}
+      </div>
+      <div className="col col-time secondary-text">
+        {activeExtreme ? (
+          <div className="buffer-container">
+            <span className="buffer-label">BUFFER TIME</span>
+            <span className="buffer-timer">{countdown}s</span>
+          </div>
+        ) : (
+          getTimeAgo(log.appearedAt)
+        )}
+      </div>
+      <div className="col col-action">
+        <ChevronRight className="w-5 h-5 text-gray-300" />
+      </div>
+    </div>
+  );
+};
+
 export default function Demo() {
   const [logsState, setLogsState] = useState({
     displayed: [],
@@ -81,7 +142,16 @@ export default function Demo() {
         if (prev.remaining.length === 0 || prev.displayed.length >= 50) return prev;
         
         const nextLogIndex = Math.floor(Math.random() * prev.remaining.length);
-        const nextLog = { ...prev.remaining[nextLogIndex], appearedAt: Date.now() };
+        
+        // force extreme for 2nd and 5th dynamic cards
+        const isExtreme = prev.displayed.length === 7 || prev.displayed.length === 10;
+        
+        const nextLog = { 
+          ...prev.remaining[nextLogIndex], 
+          appearedAt: Date.now(),
+          // hardcoded extreme trigger for 2nd and 5th cards
+          extreme: isExtreme ? true : prev.remaining[nextLogIndex].extreme 
+        };
         
         return {
           displayed: [nextLog, ...prev.displayed],
@@ -171,26 +241,11 @@ export default function Demo() {
 
             <div className="list-body">
               {displayedLogs.map((log) => (
-                <div key={`${log.id}-${log.appearedAt}`} className="list-row">
-                  <div className="col col-order secondary-text">
-                    {log.orderId}
-                  </div>
-                  <div className="col col-type">
-                    <TypeBadge type={log.type} />
-                  </div>
-                  <div className="col col-detection primary-text">
-                    {log.detection}
-                  </div>
-                  <div className="col col-resolution secondary-text">
-                    {log.resolution}
-                  </div>
-                  <div className="col col-time secondary-text">
-                    {getTimeAgo(log.appearedAt)}
-                  </div>
-                  <div className="col col-action">
-                    <ChevronRight className="w-5 h-5 text-gray-300" />
-                  </div>
-                </div>
+                <LogItem 
+                  key={`${log.id}-${log.appearedAt}`} 
+                  log={log} 
+                  currentTime={currentTime} 
+                />
               ))}
             </div>
           </div>
