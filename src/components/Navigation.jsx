@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Union.svg";
+import Popover from "./Popover";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDesktopPopoverOpen, setIsDesktopPopoverOpen] = useState(false);
+  const [isMobilePopoverOpen, setIsMobilePopoverOpen] = useState(false);
+  
+  const desktopButtonRef = useRef(null);
+  const mobileButtonRef = useRef(null);
 
   return (
     <nav className="border-b bg-white sticky top-0 z-50 border-light">
@@ -21,9 +27,20 @@ export default function Navigation() {
             <a href="#benefits" className="text-gray-600 hover:text-gray-900 transition-colors">Benefits</a>
             <a href="#statistics" className="text-gray-600 hover:text-gray-900 transition-colors">Statistics</a>
             <Link to="/demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</Link>
-            <button className="px-6 py-2 rounded-lg transition-all hover:opacity-90 btn-primary">
-              Get Started
-            </button>
+            <div className="relative">
+              <button 
+                ref={desktopButtonRef}
+                onClick={() => setIsDesktopPopoverOpen(!isDesktopPopoverOpen)}
+                className="px-6 py-2 rounded-lg transition-all hover:opacity-90 btn-primary"
+              >
+                Get Started
+              </button>
+              <Popover 
+                isOpen={isDesktopPopoverOpen} 
+                onClose={() => setIsDesktopPopoverOpen(false)} 
+                anchorRef={desktopButtonRef}
+              />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -43,9 +60,20 @@ export default function Navigation() {
             <a href="#features" className="block text-gray-600 hover:text-gray-900">Features</a>
             <a href="#benefits" className="block text-gray-600 hover:text-gray-900">Benefits</a>
             <a href="#statistics" className="block text-gray-600 hover:text-gray-900">Statistics</a>
-            <button className="w-full px-6 py-2 rounded-lg btn-primary">
-              Get Started
-            </button>
+            <div className="relative">
+              <button 
+                ref={mobileButtonRef}
+                onClick={() => setIsMobilePopoverOpen(!isMobilePopoverOpen)}
+                className="w-full px-6 py-2 rounded-lg btn-primary"
+              >
+                Get Started
+              </button>
+              <Popover 
+                isOpen={isMobilePopoverOpen} 
+                onClose={() => setIsMobilePopoverOpen(false)} 
+                anchorRef={mobileButtonRef}
+              />
+            </div>
           </div>
         </div>
       )}
