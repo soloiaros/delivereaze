@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "orderId": "#4829",
+    "type": "VIP",
+    "detection": "12 Min Delay Detected",
+    "resolution": "Automated SMS Sent + $5 Next-Visit Promo"
+  },
+  {
+    "id": 2,
+    "orderId": "#4825",
+    "type": "First-Timer",
+    "detection": "Driver Not Assigned (5m)",
+    "resolution": "Order escalated to priority queue"
+  },
+  {
+    "id": 3,
+    "orderId": "#4821",
+    "type": "Low-Value",
+    "detection": "Item Out of Stock",
+    "resolution": "Customer called via AI + Alternative suggested"
+  },
+  {
+    "id": 4,
+    "orderId": "#4818",
+    "type": "Other",
+    "detection": "Payment Failure",
+    "resolution": "Retried + Customer notified via Push"
+  },
+  {
+    "id": 5,
+    "orderId": "#4812",
+    "type": "VIP",
+    "detection": "8 Min Delay Detected",
+    "resolution": "Automated SMS Sent + Loyalty Points Added"
+  },
+  {
+    "id": 6,
+    "orderId": "#4809",
+    "type": "First-Timer",
+    "detection": "10 Min Delay Detected",
+    "resolution": "Free Drink Coupon Sent via Email"
+  },
+  {
+    "id": 7,
+    "orderId": "#4805",
+    "type": "Low-Value",
+    "detection": "Driver Cancelled",
+    "resolution": "Auto-reassigned to New Driver (30s)"
+  },
+  {
+    "id": 8,
+    "orderId": "#4801",
+    "type": "Other",
+    "detection": "Large Order (>10 items)",
+    "resolution": "Kitchen Alerted for Bulk Prep"
+  },
+  {
+    "id": 9,
+    "orderId": "#4798",
+    "type": "VIP",
+    "detection": "Wrong Address Flagged",
+    "resolution": "Contacted Customer + Updated GPS"
+  },
+  {
+    "id": 10,
+    "orderId": "#4795",
+    "type": "First-Timer",
+    "detection": "15 Min Delay Detected",
+    "resolution": "Order Refunded + Priority for Next Order"
+  },
+  {
+    "id": 11,
+    "orderId": "#4792",
+    "type": "Low-Value",
+    "detection": "Item Out of Stock",
+    "resolution": "Refunded item + Sent apology SMS"
+  },
+  {
+    "id": 12,
+    "orderId": "#4789",
+    "type": "Other",
+    "detection": "Driver Not Assigned (10m)",
+    "resolution": "Manual dispatch triggered"
+  },
+  {
+    "id": 13,
+    "orderId": "#4785",
+    "type": "VIP",
+    "detection": "Driver Not Assigned (2m)",
+    "resolution": "Immediate VIP Escalation"
+  },
+  {
+    "id": 14,
+    "orderId": "#4781",
+    "type": "First-Timer",
+    "detection": "5 Min Delay Detected",
+    "resolution": "Sent 'Preparing' Update SMS"
+  },
+  {
+    "id": 15,
+    "orderId": "#4778",
+    "type": "Low-Value",
+    "detection": "Late Night Order Delay",
+    "resolution": "Reduced delivery fee by 50%"
+  },
+  {
+    "id": 16,
+    "orderId": "#4775",
+    "type": "Other",
+    "detection": "App Crashing During Payment",
+    "resolution": "Support ticket created + Recovery link sent"
+  },
+  {
+    "id": 17,
+    "orderId": "#4772",
+    "type": "VIP",
+    "detection": "Special Request Noted",
+    "resolution": "Kitchen Flagged for Allergy Check"
+  },
+  {
+    "id": 18,
+    "orderId": "#4769",
+    "type": "First-Timer",
+    "detection": "Driver No-Show",
+    "resolution": "Full Refund + 2x Loyalty Points"
+  },
+  {
+    "id": 19,
+    "orderId": "#4765",
+    "type": "Low-Value",
+    "detection": "Address Mismatch",
+    "resolution": "Auto-called driver to confirm location"
+  },
+  {
+    "id": 20,
+    "orderId": "#4761",
+    "type": "Other",
+    "detection": "Multiple Order Merge",
+    "resolution": "Grouped for single driver delivery"
+  },
+  {
+    "id": 21,
+    "orderId": "#4758",
+    "type": "VIP",
+    "detection": "20 Min Delay Detected",
+    "resolution": "Manager called customer directly"
+  },
+  {
+    "id": 22,
+    "orderId": "#4755",
+    "type": "First-Timer",
+    "detection": "Promo Code Error",
+    "resolution": "Manual credit applied to account"
+  },
+  {
+    "id": 23,
+    "orderId": "#4751",
+    "type": "Low-Value",
+    "detection": "Item Change Requested",
+    "resolution": "Auto-updated KDS with new item"
+  },
+  {
+    "id": 24,
+    "orderId": "#4748",
+    "type": "Other",
+    "detection": "Rainy Weather Delay",
+    "resolution": "Extended estimated time for all users"
+  },
+  {
+    "id": 25,
+    "orderId": "#4745",
+    "type": "VIP",
+    "detection": "Repeat Positive Feedback",
+    "resolution": "VIP status extended by 1 month"
+  },
+  {
+    "id": 26,
+    "orderId": "#4741",
+    "type": "First-Timer",
+    "detection": "First Order Discount Missed",
+    "resolution": "Refunded difference to card"
+  },
+  {
+    "id": 27,
+    "orderId": "#4738",
+    "type": "Low-Value",
+    "detection": "Incorrect Item Image",
+    "resolution": "Technical ticket logged for web team"
+  },
+  {
+    "id": 28,
+    "orderId": "#4735",
+    "type": "Other",
+    "detection": "Kitchen Peak Load",
+    "resolution": "Slightly throttled incoming orders"
+  },
+  {
+    "id": 29,
+    "orderId": "#4732",
+    "type": "VIP",
+    "detection": "Frequent Orderer",
+    "resolution": "Surprise dessert added to bag"
+  },
+  {
+    "id": 30,
+    "orderId": "#4729",
+    "type": "First-Timer",
+    "detection": "Incomplete Profile",
+    "resolution": "Welcome SMS sent with setup tips"
+  },
+  {
+    "id": 31,
+    "orderId": "#4725",
+    "type": "Low-Value",
+    "detection": "Driver Late for Pickup",
+    "resolution": "Driver warned + Priority pickup set"
+  },
+  {
+    "id": 32,
+    "orderId": "#4721",
+    "type": "Other",
+    "detection": "Custom Request (Gluten Free)",
+    "resolution": "Cross-contamination alert sent to prep"
+  },
+  {
+    "id": 33,
+    "orderId": "#4718",
+    "type": "VIP",
+    "detection": "15 Min Delay Detected",
+    "resolution": "Full refund + Future credit issued"
+  },
+  {
+    "id": 34,
+    "orderId": "#4715",
+    "type": "First-Timer",
+    "detection": "Map Pin Placement Error",
+    "resolution": "Manually corrected delivery coordinates"
+  },
+  {
+    "id": 35,
+    "orderId": "#4711",
+    "type": "Low-Value",
+    "detection": "Substituted Item Unconfirmed",
+    "resolution": "AI voice call to confirm preference"
+  },
+  {
+    "id": 36,
+    "orderId": "#4708",
+    "type": "Other",
+    "detection": "Driver Stuck in Traffic",
+    "resolution": "Notified customer + Recalculated ETA"
+  },
+  {
+    "id": 37,
+    "orderId": "#4705",
+    "type": "VIP",
+    "detection": "High Spend History",
+    "resolution": "Personalized thank you note printed"
+  },
+  {
+    "id": 38,
+    "orderId": "#4702",
+    "type": "First-Timer",
+    "detection": "Multiple Cart Abandonments",
+    "resolution": "Win-back discount sent via push"
+  },
+  {
+    "id": 39,
+    "orderId": "#4699",
+    "type": "Low-Value",
+    "detection": "No Driver in Radius",
+    "resolution": "Expanded driver search area (5km)"
+  },
+  {
+    "id": 40,
+    "orderId": "#4695",
+    "type": "Other",
+    "detection": "Bulk Order (Corporate)",
+    "resolution": "Scheduled specialized delivery van"
+  },
+  {
+    "id": 41,
+    "orderId": "#4692",
+    "type": "VIP",
+    "detection": "5 Min Delay Detected",
+    "resolution": "Apology SMS + Immediate Priority"
+  },
+  {
+    "id": 42,
+    "orderId": "#4689",
+    "type": "First-Timer",
+    "detection": "New User Survey Flag",
+    "resolution": "Priority support assigned to ticket"
+  },
+  {
+    "id": 43,
+    "orderId": "#4685",
+    "type": "Low-Value",
+    "detection": "Incorrect Address Range",
+    "resolution": "Driver notified to call customer"
+  },
+  {
+    "id": 44,
+    "orderId": "#4682",
+    "type": "Other",
+    "detection": "Public Holiday Load",
+    "resolution": "Activated 'Peak Mode' response protocols"
+  },
+  {
+    "id": 45,
+    "orderId": "#4679",
+    "type": "VIP",
+    "detection": "Item Quality Warning",
+    "resolution": "Remake ordered before delivery"
+  },
+  {
+    "id": 46,
+    "orderId": "#4675",
+    "type": "First-Timer",
+    "detection": "Payment Gateway Slowdown",
+    "resolution": "Switch to secondary payment processor"
+  },
+  {
+    "id": 47,
+    "orderId": "#4671",
+    "type": "Low-Value",
+    "detection": "Small Basket Upsell Missed",
+    "resolution": "Sent 10% off next add-on SMS"
+  },
+  {
+    "id": 48,
+    "orderId": "#4668",
+    "type": "Other",
+    "detection": "Driver License Expiring",
+    "resolution": "Automatic system reminder sent to driver"
+  },
+  {
+    "id": 49,
+    "orderId": "#4665",
+    "type": "VIP",
+    "detection": "10 Min Delay Detected",
+    "resolution": "Complimentary side added to order"
+  },
+  {
+    "id": 50,
+    "orderId": "#4661",
+    "type": "First-Timer",
+    "detection": "Order History Empty",
+    "resolution": "Welcome gift activated for checkout"
+  }
+]
