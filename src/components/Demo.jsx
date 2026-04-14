@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { 
   Bell, 
@@ -12,50 +12,8 @@ import {
   Zap,
   ArrowLeft
 } from "lucide-react";
+import logsData from "../data/logs.json";
 import "./Demo.scss";
-
-const logs = [
-  {
-    id: 1,
-    orderId: "#4829",
-    type: "VIP",
-    detection: "12 Min Delay Detected",
-    resolution: "Automated SMS Sent + $5 Next-Visit Promo",
-    time: "2 mins ago"
-  },
-  {
-    id: 2,
-    orderId: "#4825",
-    type: "First-Timer",
-    detection: "Driver Not Assigned (5m)",
-    resolution: "Order escalated to priority queue",
-    time: "5 mins ago"
-  },
-  {
-    id: 3,
-    orderId: "#4821",
-    type: "Low-Value",
-    detection: "Item Out of Stock",
-    resolution: "Customer called via AI + Alternative suggested",
-    time: "15 mins ago"
-  },
-  {
-    id: 4,
-    orderId: "#4818",
-    type: "Other",
-    detection: "Payment Failure",
-    resolution: "Retried + Customer notified via Push",
-    time: "32 mins ago"
-  },
-  {
-    id: 5,
-    orderId: "#4812",
-    type: "VIP",
-    detection: "8 Min Delay Detected",
-    resolution: "Automated SMS Sent + Loyalty Points Added",
-    time: "45 mins ago"
-  }
-];
 
 const TypeBadge = ({ type }) => {
   const styles = {
@@ -72,7 +30,73 @@ const TypeBadge = ({ type }) => {
   );
 };
 
+const getTimeAgo = (timestamp) => {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  if (seconds < 5) return "Just now";
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  return `${hours}h ago`;
+};
+
 export default function Demo() {
+  const [logsState, setLogsState] = useState({
+    displayed: [],
+    remaining: []
+  });
+  const [currentTime, setCurrentTime] = useState(Date.now());
+  const timerRef = useRef(null);
+
+  // Initialize logs on mount
+  useEffect(() => {
+    const shuffled = [...logsData].sort(() => 0.5 - Math.random());
+    const initial = shuffled.slice(0, 6).map((log, index) => ({
+      ...log,
+      appearedAt: Date.now() - (index + 1) * 60000 * Math.floor(Math.random() * 10 + 1)
+    }));
+    const remaining = shuffled.slice(6);
+
+    setLogsState({
+      displayed: initial,
+      remaining: remaining
+    });
+
+    const timeInterval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 10000);
+
+    return () => clearInterval(timeInterval);
+  }, []);
+
+  // Handle adding new logs dynamically - strictly one at a time
+  useEffect(() => {
+    const { displayed, remaining } = logsState;
+    if (displayed.length === 0 || displayed.length >= 50 || remaining.length === 0) return;
+
+    const delay = Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000;
+    
+    timerRef.current = setTimeout(() => {
+      setLogsState(prev => {
+        if (prev.remaining.length === 0 || prev.displayed.length >= 50) return prev;
+        
+        const nextLogIndex = Math.floor(Math.random() * prev.remaining.length);
+        const nextLog = { ...prev.remaining[nextLogIndex], appearedAt: Date.now() };
+        
+        return {
+          displayed: [nextLog, ...prev.displayed],
+          remaining: prev.remaining.filter((_, i) => i !== nextLogIndex)
+        };
+      });
+    }, delay);
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [logsState.displayed.length]);
+
+  const displayedLogs = logsState.displayed;
+
   return (
     <div className="demo-page">
       <Link to="/" className="back-arrow">
@@ -105,7 +129,7 @@ export default function Demo() {
             <div className="title-section">
               <h1>Handled Edge Cases</h1>
               <div className="metrics">
-                <span className="completed">128</span>
+                <span className="completed">{displayedLogs.length + 122}</span>
                 <span className="total">automated today</span>
               </div>
             </div>
@@ -146,8 +170,8 @@ export default function Demo() {
             </div>
 
             <div className="list-body">
-              {logs.map((log) => (
-                <div key={log.id} className="list-row">
+              {displayedLogs.map((log) => (
+                <div key={`${log.id}-${log.appearedAt}`} className="list-row">
                   <div className="col col-order secondary-text">
                     {log.orderId}
                   </div>
@@ -161,7 +185,7 @@ export default function Demo() {
                     {log.resolution}
                   </div>
                   <div className="col col-time secondary-text">
-                    {log.time}
+                    {getTimeAgo(log.appearedAt)}
                   </div>
                   <div className="col col-action">
                     <ChevronRight className="w-5 h-5 text-gray-300" />
