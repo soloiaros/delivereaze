@@ -74,7 +74,7 @@ export default function Demo() {
     const { displayed, remaining } = logsState;
     if (displayed.length === 0 || displayed.length >= 50 || remaining.length === 0) return;
 
-    const delay = Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000;
+    const delay = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000;
     
     timerRef.current = setTimeout(() => {
       setLogsState(prev => {
