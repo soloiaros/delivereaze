@@ -85,28 +85,17 @@ export default function Demo() {
         {/* Global Header */}
         <header className="demo-header">
           <div className="header-left">
-            <div className="demo-logo">
-              <Zap className="w-6 h-6 text-blue-500 fill-current" />
-              <span>AImpact</span>
-            </div>
-            <nav className="demo-nav">
-              <button className="nav-item active">Dashboard</button>
-              <button className="nav-item">Analytics</button>
-              <button className="nav-item">Team</button>
-              <button className="nav-item">Settings</button>
-            </nav>
-          </div>
-          <div className="header-right">
             <div className="kitchen-health">
               <span className="dot green"></span>
               Kitchen Health: Normal
             </div>
+          </div>
+          <div className="header-right">
             <button className="rush-mode-toggle">
               Rush Mode
             </button>
             <div className="header-icons">
               <Bell className="w-5 h-5" />
-              <Settings className="w-5 h-5" />
             </div>
           </div>
         </header>
@@ -114,22 +103,21 @@ export default function Demo() {
         <div className="content-area">
           <div className="page-intro">
             <div className="title-section">
-              <h1>Emergency Brake</h1>
+              <h1>Handled Edge Cases</h1>
               <div className="metrics">
                 <span className="completed">128</span>
                 <span className="total">/ 132 automated today</span>
               </div>
             </div>
-            <button className="primary-action-btn">
-              Configure Alerts
-            </button>
           </div>
 
           <div className="controls-row">
             <div className="tab-buttons">
               <button className="tab-btn active">All Activity</button>
-              <button className="tab-btn">Critical</button>
-              <button className="tab-btn">Resolved</button>
+              <button className="tab-btn">VIP</button>
+              <button className="tab-btn">First-Timers</button>
+              <button className="tab-btn">Low-Values</button>
+              <button className="tab-btn">Other</button>
             </div>
             <div className="filters">
               <div className="search-bar">
@@ -166,7 +154,7 @@ export default function Demo() {
                     {log.resolution}
                   </div>
                   <div className="col col-status">
-                    <StatusBadge status={log.status} />
+                    <StatusBadge status="Success" />
                   </div>
                   <div className="col col-time secondary-text">
                     {log.time}
