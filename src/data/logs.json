@@ -4,349 +4,399 @@
     "orderId": "#4829",
     "type": "VIP",
     "detection": "12 Min Delay Detected",
-    "resolution": "Automated SMS Sent + $5 Next-Visit Promo"
+    "resolution": "$10 Instant Credit + Priority Prep",
+    "extreme": false
   },
   {
     "id": 2,
     "orderId": "#4825",
     "type": "First-Timer",
     "detection": "Driver Not Assigned (5m)",
-    "resolution": "Order escalated to priority queue"
+    "resolution": "Free Delivery on Next 3 Orders",
+    "extreme": false
   },
   {
     "id": 3,
     "orderId": "#4821",
     "type": "Low-Value",
     "detection": "Item Out of Stock",
-    "resolution": "Customer called via AI + Alternative suggested"
+    "resolution": "Item Refunded + 15% Off Next Order",
+    "extreme": false
   },
   {
     "id": 4,
     "orderId": "#4818",
     "type": "Other",
     "detection": "Payment Failure",
-    "resolution": "Retried + Customer notified via Push"
+    "resolution": "$5 Inconvenience Credit Applied",
+    "extreme": false
   },
   {
     "id": 5,
     "orderId": "#4812",
     "type": "VIP",
     "detection": "8 Min Delay Detected",
-    "resolution": "Automated SMS Sent + Loyalty Points Added"
+    "resolution": "500 Loyalty Points + $5 Voucher",
+    "extreme": false
   },
   {
     "id": 6,
     "orderId": "#4809",
     "type": "First-Timer",
     "detection": "10 Min Delay Detected",
-    "resolution": "Free Drink Coupon Sent via Email"
+    "resolution": "Complimentary Drink + $5 Credit",
+    "extreme": false
   },
   {
     "id": 7,
     "orderId": "#4805",
     "type": "Low-Value",
     "detection": "Driver Cancelled",
-    "resolution": "Auto-reassigned to New Driver (30s)"
+    "resolution": "$3 Delivery Fee Refunded",
+    "extreme": false
   },
   {
     "id": 8,
     "orderId": "#4801",
     "type": "Other",
     "detection": "Large Order (>10 items)",
-    "resolution": "Kitchen Alerted for Bulk Prep"
+    "resolution": "$20 Bulk Order Discount Applied",
+    "extreme": false
   },
   {
     "id": 9,
     "orderId": "#4798",
     "type": "VIP",
     "detection": "Wrong Address Flagged",
-    "resolution": "Contacted Customer + Updated GPS"
+    "resolution": "$10 'Address Fix' Credit Issued",
+    "extreme": false
   },
   {
     "id": 10,
     "orderId": "#4795",
     "type": "First-Timer",
     "detection": "15 Min Delay Detected",
-    "resolution": "Order Refunded + Priority for Next Order"
+    "resolution": "Full Refund + $20 'First Impression' Credit",
+    "extreme": true
   },
   {
     "id": 11,
     "orderId": "#4792",
     "type": "Low-Value",
     "detection": "Item Out of Stock",
-    "resolution": "Refunded item + Sent apology SMS"
+    "resolution": "Partial Refund + Free Dessert Voucher",
+    "extreme": false
   },
   {
     "id": 12,
     "orderId": "#4789",
     "type": "Other",
     "detection": "Driver Not Assigned (10m)",
-    "resolution": "Manual dispatch triggered"
+    "resolution": "$7 Late Assign Credit",
+    "extreme": false
   },
   {
     "id": 13,
     "orderId": "#4785",
     "type": "VIP",
     "detection": "Driver Not Assigned (2m)",
-    "resolution": "Immediate VIP Escalation"
+    "resolution": "$5 VIP Priority Credit",
+    "extreme": false
   },
   {
     "id": 14,
     "orderId": "#4781",
     "type": "First-Timer",
     "detection": "5 Min Delay Detected",
-    "resolution": "Sent 'Preparing' Update SMS"
+    "resolution": "$3 'Waiting' Credit",
+    "extreme": false
   },
   {
     "id": 15,
     "orderId": "#4778",
     "type": "Low-Value",
     "detection": "Late Night Order Delay",
-    "resolution": "Reduced delivery fee by 50%"
+    "resolution": "Delivery Fee waived for Night Order",
+    "extreme": false
   },
   {
     "id": 16,
     "orderId": "#4775",
     "type": "Other",
     "detection": "App Crashing During Payment",
-    "resolution": "Support ticket created + Recovery link sent"
+    "resolution": "$15 Technical Glitch Compensation",
+    "extreme": false
   },
   {
     "id": 17,
     "orderId": "#4772",
     "type": "VIP",
     "detection": "Special Request Noted",
-    "resolution": "Kitchen Flagged for Allergy Check"
+    "resolution": "Free Appetizer + Double Points",
+    "extreme": false
   },
   {
     "id": 18,
     "orderId": "#4769",
     "type": "First-Timer",
-    "detection": "Driver No-Show",
-    "resolution": "Full Refund + 2x Loyalty Points"
+    "detection": "Driver No-Show during Peak",
+    "resolution": "Immediate Free Redelivery + $30 Credit",
+    "extreme": true
   },
   {
     "id": 19,
     "orderId": "#4765",
     "type": "Low-Value",
     "detection": "Address Mismatch",
-    "resolution": "Auto-called driver to confirm location"
+    "resolution": "$5 Location Correction Credit",
+    "extreme": false
   },
   {
     "id": 20,
     "orderId": "#4761",
     "type": "Other",
     "detection": "Multiple Order Merge",
-    "resolution": "Grouped for single driver delivery"
+    "resolution": "$5 'Eco-Friendly' Bundle Discount",
+    "extreme": false
   },
   {
     "id": 21,
     "orderId": "#4758",
     "type": "VIP",
-    "detection": "20 Min Delay Detected",
-    "resolution": "Manager called customer directly"
+    "detection": "25 Min Delay Detected",
+    "resolution": "Full Refund + $50 Compensation Voucher",
+    "extreme": true
   },
   {
     "id": 22,
     "orderId": "#4755",
     "type": "First-Timer",
     "detection": "Promo Code Error",
-    "resolution": "Manual credit applied to account"
+    "resolution": "Double Discount applied manually",
+    "extreme": false
   },
   {
     "id": 23,
     "orderId": "#4751",
     "type": "Low-Value",
     "detection": "Item Change Requested",
-    "resolution": "Auto-updated KDS with new item"
+    "resolution": "New Item Free + $2 Refund",
+    "extreme": false
   },
   {
     "id": 24,
     "orderId": "#4748",
     "type": "Other",
     "detection": "Rainy Weather Delay",
-    "resolution": "Extended estimated time for all users"
+    "resolution": "$5 'Rainy Day' Credit for all users",
+    "extreme": false
   },
   {
     "id": 25,
     "orderId": "#4745",
     "type": "VIP",
     "detection": "Repeat Positive Feedback",
-    "resolution": "VIP status extended by 1 month"
+    "resolution": "Free Meal Voucher (Loyalty Reward)",
+    "extreme": false
   },
   {
     "id": 26,
     "orderId": "#4741",
     "type": "First-Timer",
     "detection": "First Order Discount Missed",
-    "resolution": "Refunded difference to card"
+    "resolution": "Refunded difference + 20% Bonus Credit",
+    "extreme": false
   },
   {
     "id": 27,
     "orderId": "#4738",
     "type": "Low-Value",
     "detection": "Incorrect Item Image",
-    "resolution": "Technical ticket logged for web team"
+    "resolution": "$5 'Catalog Error' Credit",
+    "extreme": false
   },
   {
     "id": 28,
     "orderId": "#4735",
-    "type": "Other",
-    "detection": "Kitchen Peak Load",
-    "resolution": "Slightly throttled incoming orders"
+    "type": "First-Timer",
+    "detection": "Kitchen at Max Capacity (Risk of 45m+ Delay)",
+    "resolution": "Free Meal Voucher + 6 Months Free Delivery",
+    "extreme": true
   },
   {
     "id": 29,
     "orderId": "#4732",
     "type": "VIP",
     "detection": "Frequent Orderer",
-    "resolution": "Surprise dessert added to bag"
+    "resolution": "Complimentary Side + Double Points",
+    "extreme": false
   },
   {
     "id": 30,
     "orderId": "#4729",
     "type": "First-Timer",
     "detection": "Incomplete Profile",
-    "resolution": "Welcome SMS sent with setup tips"
+    "resolution": "$5 Credit for Profile Completion",
+    "extreme": false
   },
   {
     "id": 31,
     "orderId": "#4725",
     "type": "Low-Value",
     "detection": "Driver Late for Pickup",
-    "resolution": "Driver warned + Priority pickup set"
+    "resolution": "$4 Pickup Delay Credit",
+    "extreme": false
   },
   {
     "id": 32,
     "orderId": "#4721",
     "type": "Other",
     "detection": "Custom Request (Gluten Free)",
-    "resolution": "Cross-contamination alert sent to prep"
+    "resolution": "Free Gluten-Free Side Upgrade",
+    "extreme": false
   },
   {
     "id": 33,
     "orderId": "#4718",
     "type": "VIP",
-    "detection": "15 Min Delay Detected",
-    "resolution": "Full refund + Future credit issued"
+    "detection": "20 Min Delay Detected",
+    "resolution": "Order Refunded + $100 Loyalty Credit",
+    "extreme": true
   },
   {
     "id": 34,
     "orderId": "#4715",
     "type": "First-Timer",
     "detection": "Map Pin Placement Error",
-    "resolution": "Manually corrected delivery coordinates"
+    "resolution": "$5 Map Correction Voucher",
+    "extreme": false
   },
   {
     "id": 35,
     "orderId": "#4711",
     "type": "Low-Value",
     "detection": "Substituted Item Unconfirmed",
-    "resolution": "AI voice call to confirm preference"
+    "resolution": "Full Item Refund + Free Alternative",
+    "extreme": false
   },
   {
     "id": 36,
     "orderId": "#4708",
     "type": "Other",
     "detection": "Driver Stuck in Traffic",
-    "resolution": "Notified customer + Recalculated ETA"
+    "resolution": "Delivery Fee Refunded + $5 Credit",
+    "extreme": false
   },
   {
     "id": 37,
     "orderId": "#4705",
     "type": "VIP",
     "detection": "High Spend History",
-    "resolution": "Personalized thank you note printed"
+    "resolution": "$25 Anniversary Reward Credit",
+    "extreme": false
   },
   {
     "id": 38,
     "orderId": "#4702",
     "type": "First-Timer",
     "detection": "Multiple Cart Abandonments",
-    "resolution": "Win-back discount sent via push"
+    "resolution": "$15 'Welcome Back' Credit",
+    "extreme": false
   },
   {
     "id": 39,
     "orderId": "#4699",
     "type": "Low-Value",
     "detection": "No Driver in Radius",
-    "resolution": "Expanded driver search area (5km)"
+    "resolution": "100% Delivery Discount + $10 Credit",
+    "extreme": false
   },
   {
     "id": 40,
     "orderId": "#4695",
     "type": "Other",
     "detection": "Bulk Order (Corporate)",
-    "resolution": "Scheduled specialized delivery van"
+    "resolution": "$50 Corporate Loyalty Bonus",
+    "extreme": false
   },
   {
     "id": 41,
     "orderId": "#4692",
     "type": "VIP",
     "detection": "5 Min Delay Detected",
-    "resolution": "Apology SMS + Immediate Priority"
+    "resolution": "$5 'Punctuality' Credit",
+    "extreme": false
   },
   {
     "id": 42,
     "orderId": "#4689",
     "type": "First-Timer",
     "detection": "New User Survey Flag",
-    "resolution": "Priority support assigned to ticket"
+    "resolution": "$10 Survey Participation Credit",
+    "extreme": false
   },
   {
     "id": 43,
     "orderId": "#4685",
     "type": "Low-Value",
     "detection": "Incorrect Address Range",
-    "resolution": "Driver notified to call customer"
+    "resolution": "$5 Navigation Inconvenience Credit",
+    "extreme": false
   },
   {
     "id": 44,
     "orderId": "#4682",
     "type": "Other",
     "detection": "Public Holiday Load",
-    "resolution": "Activated 'Peak Mode' response protocols"
+    "resolution": "Holiday Service Fee Waived",
+    "extreme": false
   },
   {
     "id": 45,
     "orderId": "#4679",
     "type": "VIP",
     "detection": "Item Quality Warning",
-    "resolution": "Remake ordered before delivery"
+    "resolution": "Free Remake + $10 Refund",
+    "extreme": false
   },
   {
     "id": 46,
     "orderId": "#4675",
     "type": "First-Timer",
     "detection": "Payment Gateway Slowdown",
-    "resolution": "Switch to secondary payment processor"
+    "resolution": "$5 Checkout Delay Compensation",
+    "extreme": false
   },
   {
     "id": 47,
     "orderId": "#4671",
     "type": "Low-Value",
     "detection": "Small Basket Upsell Missed",
-    "resolution": "Sent 10% off next add-on SMS"
+    "resolution": "$5 'Add-on' Credit for next time",
+    "extreme": false
   },
   {
     "id": 48,
     "orderId": "#4668",
     "type": "Other",
     "detection": "Driver License Expiring",
-    "resolution": "Automatic system reminder sent to driver"
+    "resolution": "$5 'Internal Efficiency' Credit",
+    "extreme": false
   },
   {
     "id": 49,
     "orderId": "#4665",
     "type": "VIP",
     "detection": "10 Min Delay Detected",
-    "resolution": "Complimentary side added to order"
+    "resolution": "Free Side + 200 Loyalty Points",
+    "extreme": false
   },
   {
     "id": 50,
     "orderId": "#4661",
     "type": "First-Timer",
     "detection": "Order History Empty",
-    "resolution": "Welcome gift activated for checkout"
+    "resolution": "$10 First-Order Welcome Credit",
+    "extreme": false
   }
 ]
