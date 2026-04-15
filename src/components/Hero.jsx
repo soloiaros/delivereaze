@@ -2,12 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ImageWithFallback from "./ImageWithFallback";
+import Popover from "./Popover";
 import scooter from "../assets/scooter.svg";
 import motionLines from "../assets/motion-lines.svg";
+import mockup from "../assets/mockup.png";
 
 export default function Hero() {
   const scooterRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,7 +29,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-24">
+    <section className="relative z-10 bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
@@ -57,10 +61,21 @@ export default function Hero() {
               resolving issues before frustration sets in. Built specifically for fast food chains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 btn-primary btn-hover-effect">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5" />
-              </button>
+              <div className="relative">
+                <button 
+                  ref={buttonRef}
+                  onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+                  className="px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 btn-primary btn-hover-effect"
+                >
+                  Get on the waitlist
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+                <Popover 
+                  isOpen={isPopoverOpen} 
+                  onClose={() => setIsPopoverOpen(false)} 
+                  anchorRef={buttonRef}
+                />
+              </div>
               <Link to="/demo" className="px-8 py-4 rounded-lg border-2 text-lg flex items-center justify-center gap-2 btn-outline btn-hover-effect">
                 Watch Demo
               </Link>
@@ -68,7 +83,7 @@ export default function Hero() {
           </div>
           <div className="relative">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1758626052247-79003b45f802?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwdGVjaG5vbG9neSUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzU4NDk0NDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src={mockup}
               alt="AI Interface Dashboard"
               className="rounded-2xl shadow-2xl w-full"
             />
