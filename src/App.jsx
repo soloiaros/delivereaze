@@ -9,6 +9,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import DetailedStats from "./components/DetailedStats";
 import Demo from "./components/Demo";
+import Costs from "./components/Costs";
 import "./App.scss";
 
 function Home() {
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/stats" element={<DetailedStats />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/costs" element={<Costs />} />
         </Routes>
       </main>
       {!isDemoPage && <Footer />}

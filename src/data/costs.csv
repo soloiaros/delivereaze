@@ -1,0 +1,8 @@
+Expense Category,Included Items,Monthly Cost (USD),Yearly Cost (USD)
+LLM API (Gemini 3 Flash),"Average scenario (39.2k calls/day, 400 in/50 out tokens)",$14,$168
+Tech & Infrastructure,"AWS/GCP hosting, DB, Twilio/Email APIs, SaaS tools (Workspace, GitHub)",$250,"$3,000"
+Labor (Founders),Minimal viable salary for 2 founders (living expenses),"$2,000","$24,000"
+Labor (Outsourced),Occasional freelance design/dev/security work,$500,"$6,000"
+"Legal, Admin & Workspace","Mali Müşavir, Bağ-Kur (social security), legal, coworking",$700,"$8,400"
+Sales & Marketing,"CRM (HubSpot), LinkedIn Nav, B2B travel/meetings",$250,"$3,000"
+TOTAL,,"$3,714","$44,568"

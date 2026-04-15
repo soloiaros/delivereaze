@@ -24,6 +24,7 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link to="/stats" className="text-gray-600 hover:text-gray-900 transition-colors">Research</Link>
+            <Link to="/costs" className="text-gray-600 hover:text-gray-900 transition-colors">Costs</Link>
             <Link to="/demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</Link>
             <div className="relative">
               <button 
@@ -56,6 +57,7 @@ export default function Navigation() {
         <div className="md:hidden border-t bg-white border-light">
           <div className="px-4 py-4 space-y-3">
             <Link to="/stats" className="block text-gray-600 hover:text-gray-900">Research</Link>
+            <Link to="/costs" className="block text-gray-600 hover:text-gray-900">Costs</Link>
             <Link to="/demo" className="block text-gray-600 hover:text-gray-900">Demo</Link>
             <div className="relative">
               <button 

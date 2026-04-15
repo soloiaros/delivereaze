@@ -1,0 +1,202 @@
+:root {
+  --stats-bg: #fcfcfc;
+  --stats-color: var(--color-primary);
+  --stats-color-muted: rgba(36, 78, 93, 0.6);
+  --stats-border-color: var(--color-primary);
+  --stats-hover-bg: #f5f5f5;
+  --stats-grid-gap: 1px;
+}
+
+.costs-page {
+  background-color: var(--stats-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--stats-color);
+  font-family: 'Inter', 'Roboto Mono', monospace;
+  overflow-x: hidden;
+
+  .costs-header {
+    border-bottom: none;
+    
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--stats-color);
+      text-decoration: none;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    .technical-label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--stats-color-muted);
+    }
+  }
+
+  .costs-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    width: 100%;
+  }
+
+  .table-container {
+    position: relative;
+    background-color: #ffffff;
+    margin-bottom: 4rem;
+    border: 1px solid var(--stats-border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+    .corner-dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: var(--stats-border-color);
+      border-radius: 50%;
+      z-index: 10;
+      
+      &.top-left { top: -2.5px; left: -2.5px; }
+      &.top-right { top: -2.5px; right: -2.5px; }
+      &.bottom-left { bottom: -2.5px; left: -2.5px; }
+      &.bottom-right { bottom: -2.5px; right: -2.5px; }
+    }
+
+    .technical-marker {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      color: var(--stats-color-muted);
+      text-transform: uppercase;
+    }
+  }
+
+  .costs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+
+    th {
+      text-align: left;
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid var(--stats-border-color);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      color: var(--stats-color-muted);
+      font-weight: 600;
+      background-color: rgba(var(--color-primary-rgb), 0.02);
+    }
+
+    td {
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid rgba(36, 78, 93, 0.1);
+      line-height: 1.5;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .category-cell {
+      font-weight: 600;
+      color: var(--stats-color);
+    }
+
+    .items-cell {
+      color: var(--stats-color-muted);
+      max-width: 400px;
+    }
+
+    .cost-cell {
+      font-family: 'Roboto Mono', monospace;
+      text-align: right;
+    }
+
+    .total-row {
+      background-color: rgba(var(--color-primary-rgb), 0.05);
+      td {
+        border-top: 2px solid var(--stats-border-color);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .sources-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(36, 78, 93, 0.1);
+
+    h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--stats-color-muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: rgba(36, 78, 93, 0.1);
+      }
+    }
+
+    .sources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      a {
+        font-size: 0.8125rem;
+        color: var(--stats-color);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s;
+        word-break: break-all;
+
+        &::before {
+          content: "→";
+          font-family: 'Roboto Mono', monospace;
+          opacity: 0.5;
+        }
+
+        &:hover {
+          color: var(--color-accent);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .costs-table {
+    display: block;
+    overflow-x: auto;
+    
+    th, td {
+      min-width: 150px;
+    }
+
+    .items-cell {
+      min-width: 250px;
+    }
+  }
+}
