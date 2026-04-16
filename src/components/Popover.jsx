@@ -63,8 +63,20 @@ export default function Popover({ isOpen, onClose, anchorRef }) {
           </p>
 
           <form 
-            onSubmit={(e) => {
+            method="post" 
+            action="https://sheetdb.io/api/v1/9s3vcl0blt3wy"
+            onSubmit={async (e) => {
               e.preventDefault();
+              const formData = new FormData(e.target);
+              const data = Object.fromEntries(formData.entries());
+              await fetch('https://sheetdb.io/api/v1/9s3vcl0blt3wy', {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: data })
+              });
               onClose();
             }} 
             className="space-y-3"
@@ -72,6 +84,7 @@ export default function Popover({ isOpen, onClose, anchorRef }) {
             <div className="relative">
               <input
                 type="email"
+                name="email"
                 placeholder="email@example.com"
                 className="w-full px-4 py-3 rounded-xl border border-light focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-gray-50/50"
                 required
