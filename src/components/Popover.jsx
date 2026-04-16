@@ -89,6 +89,11 @@ export default function Popover({ isOpen, onClose, anchorRef }) {
                 className="w-full px-4 py-3 rounded-xl border border-light focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-gray-50/50"
                 required
               />
+              <input
+                name="date" 
+                type="hidden" 
+                value={new Date(Date.now())}
+              />
             </div>
             <button
               type="submit"
